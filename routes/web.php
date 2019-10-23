@@ -1,5 +1,6 @@
 <?php
 
+// admin 后台
 Route::domain(config('pixelfed.domain.admin'))->prefix('i/admin')->group(function () {
     Route::redirect('/', '/dashboard');
     Route::redirect('timeline', config('app.url').'/timeline');
@@ -53,7 +54,7 @@ Route::domain(config('pixelfed.domain.admin'))->prefix('i/admin')->group(functio
     Route::get('messages/show/{id}', 'AdminController@messagesShow');
     Route::post('messages/mark-read', 'AdminController@messagesMarkRead');
 });
-
+// 主网站
 Route::domain(config('pixelfed.domain.app'))->middleware(['validemail', 'twofactor', 'localization'])->group(function () {
     Route::get('/', 'SiteController@home')->name('timeline.personal');
     Route::post('/', 'StatusController@store');

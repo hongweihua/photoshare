@@ -23,7 +23,7 @@
     <link rel="shortcut icon" type="image/png" href="/img/favicon.png?v=2">
     <link rel="apple-touch-icon" type="image/png" href="/img/favicon.png?v=2">
     <link href="{{ mix('css/landing.css') }}" rel="stylesheet">
-    <script type="text/javascript">window.App = {}; window.App.config = {!!App\Util\Site\Config::json()!!}</script>
+    <script type="text/javascript">window.App = {}; window.App.config = '{!!App\Util\Site\Config::json()!!}'</script>
 </head>
 <body class="">
     <main id="content">
@@ -81,8 +81,8 @@
                                     <img src="/img/pixelfed-icon-color.svg">
                                 </div>
                                 <div class="py-3 text-center">
-                                    <h3 class="font-weight-bold">Pixelfed</h3>
-                                    <p class="mb-0 lead">Photo sharing for everyone</p>
+                                    <h3 class="font-weight-bold">Photo Share</h3>
+                                    <p class="mb-0 lead">分享照片 分享生活</p>
                                 </div>
                                 <div>
                                     @if(true === config('pixelfed.open_registration'))
@@ -148,13 +148,13 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <p class="mb-0 font-weight-bold text-lighter small">By signing up, you agree to our <a href="{{route('site.terms')}}" class="text-muted">Terms of Use</a> and <a href="{{route('site.privacy')}}" class="text-muted">Privacy Policy</a>.</p>
+                                        <p class="mb-0 font-weight-bold text-lighter small">注册默认同意我们的 <a href="{{route('site.terms')}}" class="text-muted">条款</a> 和 <a href="{{route('site.privacy')}}" class="text-muted">和隐私协议</a>.</p>
                                     </form>
                                     @else
                                     <div style="min-height: 350px" class="d-flex justify-content-center align-items-center">
                                         <div class="text-center">
-                                            <p class="lead">Registrations are closed.</p>
-                                            <p class="text-lighter small">You can find a list of other instances on <a href="https://the-federation.info/pixelfed" class="text-muted font-weight-bold">the-federation.info/pixelfed</a> or <a href="https://fediverse.network/pixelfed" class="text-muted font-weight-bold">fediverse.network/pixelfed</a></p>
+                                            <p class="lead">暂不开放注册</p>
+{{--                                            <p class="text-lighter small">You can find a list of other instances on <a href="https://the-federation.info/pixelfed" class="text-muted font-weight-bold">the-federation.info/pixelfed</a> or <a href="https://fediverse.network/pixelfed" class="text-muted font-weight-bold">fediverse.network/pixelfed</a></p>--}}
                                         </div>
                                     </div>
                                     @endif
@@ -162,7 +162,7 @@
                             </div>
                         </div>
                         <div class="card card-body">
-                            <p class="text-center mb-0 font-weight-bold">Have an account? <a href="/login">Log in</a></p>
+                            <p class="text-center mb-0 font-weight-bold">已有账号? <a href="/login">登 录</a></p>
                         </div>
                     </div>
                 </div>

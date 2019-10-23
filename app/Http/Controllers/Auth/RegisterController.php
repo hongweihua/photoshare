@@ -99,6 +99,10 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * 限制用户注册黑名单
+     * @param $username
+     */
     public function validateUsername($username)
     {
         $restricted = RestrictedNames::get();

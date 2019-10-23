@@ -10,7 +10,7 @@
           <a href="{{route('site.privacy')}}" class="text-primary p-2">{{__('site.privacy')}}</a>
           <a href="{{route('discover.places')}}" class="text-primary p-2">{{__('site.places')}}</a>
           <a href="{{route('site.language')}}" class="text-primary p-2">{{__('site.language')}}</a>
-          <a href="https://pixelfed.org" class="text-muted p-2 ml-md-auto" rel="noopener" title="version {{config('pixelfed.version')}}" data-toggle="tooltip">Powered by Pixelfed</a>
+          <a href="https://www.huaziking.com" class="text-muted p-2 ml-md-auto" rel="noopener" title="version {{config('pixelfed.version')}}" data-toggle="tooltip">Powered by Whhong</a>
         </p>
     </div>
   </footer>
