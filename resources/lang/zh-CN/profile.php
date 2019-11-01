@@ -1,15 +1,15 @@
 <?php
 
 return [
-  'emptyTimeline'         => '這個使用者還沒有貼文！',
-  'emptyFollowers'        => '這個使用者還沒有追蹤者！',
-  'emptyFollowing'        => '這個使用者還沒有追蹤任何人！',
-  'emptySaved'            => '您還沒有儲存任何貼文！',
-  'savedWarning'          => '您可以看到的只有您已儲存的貼文',
-  'privateProfileWarning' => '這個帳號是私密帳號',
-  'alreadyFollow'         => '已經追蹤 :username?',
-  'loginToSeeProfile'     => '來檢視他們的照片與影片。',
+  'emptyTimeline'         => '内容为空！',
+  'emptyFollowers'        => '没有关注！',
+  'emptyFollowing'        => '没有粉丝！',
+  'emptySaved'            => '您还没有保存任务内容！',
+  'savedWarning'          => '您可以看到的只有您发过的内容',
+  'privateProfileWarning' => '私密账号',
+  'alreadyFollow'         => '已经关注 :username?',
+  'loginToSeeProfile'     => '登录查看。',
 
-  'status.disabled.header' 	  => '個人檔案不可用',
-  'status.disabled.body'	  => '抱歉，此個人檔案暫時不可用。請稍後再試。',
+  'status.disabled.header' 	  => '个人中心不可用',
+  'status.disabled.body'	  => '抱歉，个人中心暂时不可用，请稍后再试。',
 ];

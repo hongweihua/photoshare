@@ -8,23 +8,22 @@
         <div class="collapse navbar-collapse">
         @auth
             <ul class="navbar-nav d-none d-md-block mx-auto">
+                {{--搜索--}}
               <form class="form-inline search-bar" method="get" action="/i/results">
                 <input class="form-control form-control-sm" name="q" placeholder="{{__('navmenu.search')}}" aria-label="search" autocomplete="off" required style="line-height: 0.6;width:200px">
               </form>
             </ul>
         @endauth
-
         @guest
-                
             <ul class="navbar-nav ml-auto">
                 <li>
-                    <a class="nav-link font-weight-bold text-primary" href="{{ route('login') }}" title="Login">
+                    <a class="nav-link font-weight-bold text-primary" href="{{ route('login') }}" title="登录">
                         {{ __('Login') }}
                     </a>
                 </li>
             @if(config('pixelfed.open_registration'))
                     <li>
-                        <a class="nav-link font-weight-bold" href="{{ route('register') }}" title="Register">
+                        <a class="nav-link font-weight-bold" href="{{ route('register') }}" title="注册">
                             {{ __('Register') }}
                         </a>
                     </li>
@@ -34,7 +33,7 @@
                 <ul class="navbar-nav">
                     <div class="d-none d-md-block">
                         <li class="nav-item px-md-2">
-                            <a class="nav-link font-weight-bold text-muted" href="/" title="Home Timeline" data-toggle="tooltip" data-placement="bottom">
+                            <a class="nav-link font-weight-bold text-muted" href="/" title="时间轴" data-toggle="tooltip" data-placement="bottom">
                                 <i class="fas fa-home fa-lg"></i>
                             </a>
                         </li>
@@ -42,14 +41,14 @@
                     <li class="d-block d-md-none"></li>
                     <div class="d-none d-md-block">
                         <li class="nav-item px-md-2">
-                            <a class="nav-link font-weight-bold text-muted" href="{{route('discover')}}" title="Discover" data-toggle="tooltip" data-placement="bottom">
+                            <a class="nav-link font-weight-bold text-muted" href="{{route('discover')}}" title="发现" data-toggle="tooltip" data-placement="bottom">
                                 <i class="far fa-compass fa-lg"></i>
                             </a>
                         </li>
                     </div>
                     <div class="d-none d-md-block">
                         <li class="nav-item px-md-2">
-                            <div title="Create new post" data-toggle="tooltip" data-placement="bottom">
+                            <div title="新建动态" data-toggle="tooltip" data-placement="bottom">
                                 <a href="{{route('compose')}}" class="nav-link" data-toggle="modal" data-target="#composeModal">
                                   <i class="fas fa-camera-retro fa-lg text-muted"></i>
                                 </a>
@@ -73,7 +72,7 @@
                             </a>
                             <a class="dropdown-item font-weight-bold" href="{{route('notifications')}}">
                                 <span class="far fa-bell pr-1"></span>
-                                Notifications
+                                {{__('navmenu.notifications')}}
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item font-weight-bold" href="{{route('timeline.personal')}}">

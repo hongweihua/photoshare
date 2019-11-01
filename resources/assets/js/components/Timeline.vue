@@ -5,7 +5,7 @@
 			<div style="padding-top:10px;">
 				<div v-if="loading" class="text-center">
 					<div class="spinner-border" role="status">
-						<span class="sr-only">Loading...</span>
+						<span class="sr-only">加载中...</span>
 					</div>
 				</div>
 				<div :data-status-id="status.id" v-for="(status, index) in feed" :key="`${index}-${status.id}`">
@@ -230,8 +230,8 @@
 						<div class="card-body text-center">
 							<p class="h2 font-weight-lighter p-5">Hello, {{profile.acct}}</p>
 							<p class="text-lighter"><i class="fas fa-camera-retro fa-5x"></i></p>
-							<p class="h3 font-weight-lighter p-5">Start following people to build your timeline.</p>
-							<p><a href="/discover" class="btn btn-primary font-weight-bold py-0">Discover new people and posts</a></p>
+							<p class="h3 font-weight-lighter p-5">关注别人获取更多动态。</p>
+							<p><a href="/discover" class="btn btn-primary font-weight-bold py-0">发现新的小伙伴和动态</a></p>
 						</div>
 					</div>
 				</div>

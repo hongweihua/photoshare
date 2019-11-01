@@ -14,5 +14,8 @@ return [
 	'admin'				=> '管理',
 	'logout'			=> '登出',
 	'directMessages'	=> '站内信',
+    'myProfile' => '个人资料',
+    'notifications' => '通知',
+
 
 ];
