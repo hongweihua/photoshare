@@ -11,7 +11,7 @@
 				<div :data-status-id="status.id" v-for="(status, index) in feed" :key="`${index}-${status.id}`">
 					<div v-if="index == 2 && showSuggestions == true && suggestions.length" class="card mb-sm-4 status-card card-md-rounded-0 shadow-none border">
 						<div class="card-header d-flex align-items-center justify-content-between bg-white border-0 pb-0">
-							<h6 class="text-muted font-weight-bold mb-0">Suggestions For You</h6>
+							<h6 class="text-muted font-weight-bold mb-0">建议</h6>
 							<span class="cursor-pointer text-muted" v-on:click="hideSuggestions"><i class="fas fa-times"></i></span>
 						</div>
 						<div class="card-body row mx-0">
@@ -91,7 +91,7 @@
 								</button>
 								<!-- <div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item font-weight-bold" :href="status.url">Go to post</a>
-									<!-- <a class="dropdown-item font-weight-bold" href="#">Share</a>
+								    <a class="dropdown-item font-weight-bold" href="#">Share</a>
 									<a class="dropdown-item font-weight-bold" href="#">Embed</a> ->
 									<span v-if="statusOwner(status) == false">
 										<a class="dropdown-item font-weight-bold" :href="reportUrl(status)">Report</a>
@@ -209,8 +209,8 @@
 
 						<div v-if="status.id == replyId && !status.comments_disabled" class="card-footer bg-white sticky-md-bottom p-0">
 							<form class="border-0 rounded-0 align-middle" method="post" action="/i/comment" :data-id="status.id" data-truncate="false">
-								<textarea class="form-control border-0 rounded-0" name="comment" placeholder="Add a comment…" autocomplete="off" autocorrect="off" style="height:56px;line-height: 18px;max-height:80px;resize: none; padding-right:4.2rem;" v-model="replyText"></textarea>
-								<input type="button" value="Post" class="d-inline-block btn btn-link font-weight-bold reply-btn text-decoration-none" v-on:click.prevent="commentSubmit(status, $event)"/>
+								<textarea class="form-control border-0 rounded-0" name="comment" placeholder="添加评论……" autocomplete="off" autocorrect="off" style="height:56px;line-height: 18px;max-height:80px;resize: none; padding-right:4.2rem;" v-model="replyText"></textarea>
+								<input type="button" value="发表" class="d-inline-block btn btn-link font-weight-bold reply-btn text-decoration-none" v-on:click.prevent="commentSubmit(status, $event)"/>
 							</form>
 						</div>
 					</div>
@@ -219,8 +219,8 @@
 					<div class="card shadow-none border">
 						<div class="card-body">
 							<infinite-loading @infinite="infiniteTimeline" :distance="800">
-							<div slot="no-more" class="font-weight-bold">No more posts to load</div>
-							<div slot="no-results" class="font-weight-bold">No more posts to load</div>
+							<div slot="no-more" class="font-weight-bold">没有了</div>
+							<div slot="no-results" class="font-weight-bold">没有了</div>
 							</infinite-loading>
 						</div>
 					</div>
@@ -231,7 +231,7 @@
 							<p class="h2 font-weight-lighter p-5">Hello, {{profile.acct}}</p>
 							<p class="text-lighter"><i class="fas fa-camera-retro fa-5x"></i></p>
 							<p class="h3 font-weight-lighter p-5">关注别人获取更多动态。</p>
-							<p><a href="/discover" class="btn btn-primary font-weight-bold py-0">发现新的小伙伴和动态</a></p>
+							<p><a href="/discover" class="btn btn-primary font-weight-bold py-0">搜一搜</a></p>
 						</div>
 					</div>
 				</div>
@@ -262,15 +262,15 @@
 							<div class="d-flex justify-content-between text-center">
 								<span class="cursor-pointer" @click="redirect(profile.url)">
 									<p class="mb-0 font-weight-bold">{{formatCount(profile.statuses_count)}}</p>
-									<p class="mb-0 small text-muted">Posts</p>
+									<p class="mb-0 small text-muted">动态</p>
 								</span>
 								<span class="cursor-pointer" @click="redirect(profile.url+'?md=followers')">
 									<p class="mb-0 font-weight-bold">{{formatCount(profile.followers_count)}}</p>
-									<p class="mb-0 small text-muted">Followers</p>
+									<p class="mb-0 small text-muted">关注</p>
 								</span>
 								<span class="cursor-pointer" @click="redirect(profile.url+'?md=following')">
 									<p class="mb-0 font-weight-bold">{{formatCount(profile.following_count)}}</p>
-									<p class="mb-0 small text-muted">Following</p>
+									<p class="mb-0 small text-muted">粉丝</p>
 								</span>
 							</div>
 						</div>
@@ -281,12 +281,12 @@
 					<div class="card border shadow-none mb-3" style="max-width: 18rem;">
 						<div class="card-body">
 							<div class="card-title">
-								<span class="font-weight-bold">Tip: Hide follower counts</span>
+								<span class="font-weight-bold">小技巧：隐藏关注与粉丝数量</span>
 								<span class="float-right cursor-pointer" @click.prevent="hideTips()"><i class="fas fa-times text-lighter"></i></span>
 							</div>
 							<p class="card-text">
-								<span style="font-size:13px;">You can hide followers or following count and lists on your profile.</span>
-								<br><a href="/settings/privacy/" class="small font-weight-bold">Privacy Settings</a></p>
+								<span style="font-size:13px;">可以在个人中心-隐私设置中隐藏你的关注和粉丝</span>
+								<br><a href="/settings/privacy/" class="small font-weight-bold">隐私设置</a></p>
 						</div>
 					</div>
 				</div>
@@ -324,16 +324,16 @@
 				<footer>
 					<div class="container pb-5">
 						<p class="mb-0 text-uppercase font-weight-bold text-muted small">
-							<a href="/site/about" class="text-dark pr-2">About Us</a>
-							<a href="/site/help" class="text-dark pr-2">Help</a>
-							<a href="/site/open-source" class="text-dark pr-2">Open Source</a>
-							<a href="/site/language" class="text-dark pr-2">Language</a>
-							<a href="/site/terms" class="text-dark pr-2">Terms</a>
-							<a href="/site/privacy" class="text-dark pr-2">Privacy</a>
-							<a href="/discover/places" class="text-dark pr-2">Places</a>
+							<a href="/site/about" class="text-dark pr-2">关于</a>
+							<a href="/site/help" class="text-dark pr-2">帮助</a>
+							<a href="/site/open-source" class="text-dark pr-2">开源</a>
+							<a href="/site/language" class="text-dark pr-2">语言</a>
+							<a href="/site/terms" class="text-dark pr-2">团队</a>
+							<a href="/site/privacy" class="text-dark pr-2">隐私</a>
+							<a href="/discover/places" class="text-dark pr-2">地址</a>
 						</p>
 						<p class="mb-0 text-uppercase font-weight-bold text-muted small">
-							<a href="http://pixelfed.org" class="text-muted" rel="noopener" title="" data-toggle="tooltip">Powered by Pixelfed</a>
+							<a href="https://www.huaziking.com" class="text-muted" rel="noopener" title="" data-toggle="tooltip">Powered by Whhong</a>
 						</p>
 					</div>
 				</footer>
@@ -598,8 +598,8 @@
 					}
 				}).catch(err => {
 					swal(
-						'Oops, something went wrong',
-						'Please reload the page.',
+						'出错',
+						'请刷新页面',
 						'error'
 					);
 				});
@@ -763,9 +763,9 @@
 					item: status.account.id
 				}).then(res => {
 					this.feed = this.feed.filter(s => s.account.id !== status.account.id);
-					swal('Success', 'You have successfully blocked ' + status.account.acct, 'success');
+					swal('Success', '你已经屏蔽了 ' + status.account.acct, 'success');
 				}).catch(err => {
-					swal('Error', 'Something went wrong. Please try again later.', 'error');
+					swal('Error', '出错，请稍后重试', 'error');
 				});
 			},
 
@@ -774,7 +774,7 @@
 					return;
 				}
 
-				if(window.confirm('Are you sure you want to delete this post?') == false) {
+				if(window.confirm('确认删除?') == false) {
 					return;
 				}
 

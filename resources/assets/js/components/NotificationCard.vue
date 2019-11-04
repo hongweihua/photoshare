@@ -4,13 +4,13 @@
 			<div class="card-header bg-white">
 				<p class="mb-0 d-flex align-items-center justify-content-between">
 					<span><i class="far fa-bell fa-lg text-white"></i></span>
-					<span class="small text-dark text-uppercase font-weight-bold">Notifications</span>
+					<span class="small text-dark text-uppercase font-weight-bold">消息提醒</span>
 					<a class="text-decoration-none text-muted" href="/account/activity"><i class="fas fa-inbox fa-lg"></i></a>
 				</p>
 			</div>
 			<div class="card-body loader text-center" style="height: 230px;">
 				<div class="spinner-border" role="status">
-					<span class="sr-only">Loading...</span>
+					<span class="sr-only">加载中...</span>
 				</div>
 			</div>
 			<div class="card-body pt-2 px-0 py-0 contents" style="max-height: 230px; overflow-y: scroll;">
@@ -53,7 +53,7 @@
 				</div>
 				<div v-if="notifications.length == 0" class="text-lighter text-center py-3">
 					<p class="mb-0"><i class="fas fa-inbox fa-3x"></i></p>
-					<p class="mb-0 small font-weight-bold">0 Notifications!</p>
+					<p class="mb-0 small font-weight-bold">没有消息</p>
 				</div>
 			</div>
 		</div>

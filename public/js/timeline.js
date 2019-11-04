@@ -1079,7 +1079,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
           _this2.fetchHashtagPosts();
         }
       })["catch"](function (err) {
-        swal('Oops, something went wrong', 'Please reload the page.', 'error');
+        swal('出错', '请刷新页面', 'error');
       });
     },
     infiniteTimeline: function infiniteTimeline($state) {
@@ -1248,9 +1248,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         _this6.feed = _this6.feed.filter(function (s) {
           return s.account.id !== status.account.id;
         });
-        swal('Success', 'You have successfully blocked ' + status.account.acct, 'success');
+        swal('Success', '你已经屏蔽了 ' + status.account.acct, 'success');
       })["catch"](function (err) {
-        swal('Error', 'Something went wrong. Please try again later.', 'error');
+        swal('Error', '出错，请稍后重试', 'error');
       });
     },
     deletePost: function deletePost(status) {
@@ -1260,7 +1260,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         return;
       }
 
-      if (window.confirm('Are you sure you want to delete this post?') == false) {
+      if (window.confirm('确认删除?') == false) {
         return;
       }
 
@@ -3151,7 +3151,7 @@ var render = function() {
                 _vm._m(2),
                 _vm._v(" "),
                 _c("p", { staticClass: "mb-0 small font-weight-bold" }, [
-                  _vm._v("0 Notifications!")
+                  _vm._v("没有消息")
                 ])
               ])
             : _vm._e()
@@ -3180,7 +3180,7 @@ var staticRenderFns = [
           _c(
             "span",
             { staticClass: "small text-dark text-uppercase font-weight-bold" },
-            [_vm._v("Notifications")]
+            [_vm._v("消息提醒")]
           ),
           _vm._v(" "),
           _c(
@@ -3209,7 +3209,7 @@ var staticRenderFns = [
         _c(
           "div",
           { staticClass: "spinner-border", attrs: { role: "status" } },
-          [_c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])]
+          [_c("span", { staticClass: "sr-only" }, [_vm._v("加载中...")])]
         )
       ]
     )
@@ -3893,7 +3893,7 @@ var render = function() {
                                       staticClass:
                                         "text-muted font-weight-bold mb-0"
                                     },
-                                    [_vm._v("Suggestions For You")]
+                                    [_vm._v("建议")]
                                   ),
                                   _vm._v(" "),
                                   _c(
@@ -4792,7 +4792,7 @@ var render = function() {
                                         },
                                         attrs: {
                                           name: "comment",
-                                          placeholder: "Add a comment…",
+                                          placeholder: "添加评论……",
                                           autocomplete: "off",
                                           autocorrect: "off"
                                         },
@@ -4812,7 +4812,7 @@ var render = function() {
                                           "d-inline-block btn btn-link font-weight-bold reply-btn text-decoration-none",
                                         attrs: {
                                           type: "button",
-                                          value: "Post"
+                                          value: "发表"
                                         },
                                         on: {
                                           click: function($event) {
@@ -4856,7 +4856,7 @@ var render = function() {
                                     attrs: { slot: "no-more" },
                                     slot: "no-more"
                                   },
-                                  [_vm._v("No more posts to load")]
+                                  [_vm._v("没有了")]
                                 ),
                                 _vm._v(" "),
                                 _c(
@@ -4866,7 +4866,7 @@ var render = function() {
                                     attrs: { slot: "no-results" },
                                     slot: "no-results"
                                   },
-                                  [_vm._v("No more posts to load")]
+                                  [_vm._v("没有了")]
                                 )
                               ]
                             )
@@ -5038,7 +5038,7 @@ var render = function() {
                                     _c(
                                       "p",
                                       { staticClass: "mb-0 small text-muted" },
-                                      [_vm._v("Posts")]
+                                      [_vm._v("动态")]
                                     )
                                   ]
                                 ),
@@ -5073,7 +5073,7 @@ var render = function() {
                                     _c(
                                       "p",
                                       { staticClass: "mb-0 small text-muted" },
-                                      [_vm._v("Followers")]
+                                      [_vm._v("关注")]
                                     )
                                   ]
                                 ),
@@ -5108,7 +5108,7 @@ var render = function() {
                                     _c(
                                       "p",
                                       { staticClass: "mb-0 small text-muted" },
-                                      [_vm._v("Following")]
+                                      [_vm._v("粉丝")]
                                     )
                                   ]
                                 )
@@ -5133,7 +5133,7 @@ var render = function() {
                                   _c(
                                     "span",
                                     { staticClass: "font-weight-bold" },
-                                    [_vm._v("Tip: Hide follower counts")]
+                                    [_vm._v("小技巧：隐藏关注与粉丝数量")]
                                   ),
                                   _vm._v(" "),
                                   _c(
@@ -5737,7 +5737,7 @@ var staticRenderFns = [
           staticClass: "btn btn-primary font-weight-bold py-0",
           attrs: { href: "/discover" }
         },
-        [_vm._v("发现新的小伙伴和动态")]
+        [_vm._v("搜一搜")]
       )
     ])
   },
@@ -5759,9 +5759,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "card-text" }, [
       _c("span", { staticStyle: { "font-size": "13px" } }, [
-        _vm._v(
-          "You can hide followers or following count and lists on your profile."
-        )
+        _vm._v("可以在个人中心-隐私设置中隐藏你的关注和粉丝")
       ]),
       _vm._v(" "),
       _c("br"),
@@ -5771,7 +5769,7 @@ var staticRenderFns = [
           staticClass: "small font-weight-bold",
           attrs: { href: "/settings/privacy/" }
         },
-        [_vm._v("Privacy Settings")]
+        [_vm._v("隐私设置")]
       )
     ])
   },
@@ -5790,13 +5788,13 @@ var staticRenderFns = [
             _c(
               "a",
               { staticClass: "text-dark pr-2", attrs: { href: "/site/about" } },
-              [_vm._v("About Us")]
+              [_vm._v("关于")]
             ),
             _vm._v(" "),
             _c(
               "a",
               { staticClass: "text-dark pr-2", attrs: { href: "/site/help" } },
-              [_vm._v("Help")]
+              [_vm._v("帮助")]
             ),
             _vm._v(" "),
             _c(
@@ -5805,7 +5803,7 @@ var staticRenderFns = [
                 staticClass: "text-dark pr-2",
                 attrs: { href: "/site/open-source" }
               },
-              [_vm._v("Open Source")]
+              [_vm._v("开源")]
             ),
             _vm._v(" "),
             _c(
@@ -5814,13 +5812,13 @@ var staticRenderFns = [
                 staticClass: "text-dark pr-2",
                 attrs: { href: "/site/language" }
               },
-              [_vm._v("Language")]
+              [_vm._v("语言")]
             ),
             _vm._v(" "),
             _c(
               "a",
               { staticClass: "text-dark pr-2", attrs: { href: "/site/terms" } },
-              [_vm._v("Terms")]
+              [_vm._v("团队")]
             ),
             _vm._v(" "),
             _c(
@@ -5829,7 +5827,7 @@ var staticRenderFns = [
                 staticClass: "text-dark pr-2",
                 attrs: { href: "/site/privacy" }
               },
-              [_vm._v("Privacy")]
+              [_vm._v("隐私")]
             ),
             _vm._v(" "),
             _c(
@@ -5838,7 +5836,7 @@ var staticRenderFns = [
                 staticClass: "text-dark pr-2",
                 attrs: { href: "/discover/places" }
               },
-              [_vm._v("Places")]
+              [_vm._v("地址")]
             )
           ]
         ),
@@ -5854,13 +5852,13 @@ var staticRenderFns = [
               {
                 staticClass: "text-muted",
                 attrs: {
-                  href: "http://pixelfed.org",
+                  href: "https://www.huaziking.com",
                   rel: "noopener",
                   title: "",
                   "data-toggle": "tooltip"
                 }
               },
-              [_vm._v("Powered by Pixelfed")]
+              [_vm._v("Powered by Whhong")]
             )
           ]
         )
