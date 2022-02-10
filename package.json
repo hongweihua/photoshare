@@ -34,7 +34,7 @@
         "infinite-scroll": "^3.0.6",
         "laravel-echo": "^1.5.4",
         "laravel-mix": "^4.1.2",
-        "node-sass": "^4.12.0",
+        "node-sass": "^7.0.0",
         "opencollective": "^1.0.3",
         "opencollective-postinstall": "^2.0.2",
         "plyr": "^3.5.6",
